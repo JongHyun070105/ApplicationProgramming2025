@@ -25,8 +25,8 @@ public class JComponentEX extends JFrame {
         b1.setBackground(Color.YELLOW); // 버튼 b1 배경색 노란색 설정
         b1.setForeground(Color.MAGENTA); // 버튼 b1 글씨색 보라색 설정
         b1.setFont(new Font("Arial", Font.ITALIC, 20)); // 버튼 b1 폰트 설정 (폰트명, 폰트 디자인, 폰트 사이즈)
-        b1.setOpaque(true);
-        b1.setBorderPainted(false);
+        b1.setOpaque(true); // mac은 버튼 배경색이 적용이 안되서 찾은 해결방법 1
+        b1.setBorderPainted(false); // 해결방법 2
 
 
         // 버튼 b2 설정
