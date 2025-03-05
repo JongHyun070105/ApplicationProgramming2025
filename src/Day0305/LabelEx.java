@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class LabelEx extends JFrame {
     public LabelEx() {
-        setTitle("레이블 예제"); // Super(); 도 가능
+        setTitle("레이블 예제");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container cp = getContentPane();
@@ -30,6 +30,6 @@ public class LabelEx extends JFrame {
 
     public static void main(String[] args) {
 //      new LabelEx();  => 이렇게 작성하면 쓰레드 관리가 안된다 XXXX
-        SwingUtilities.invokeLater(() -> new LabelEx()); // 람다식 표현 : 매개변수가 하나일때만 람다식 표현을 쓸 수 있다. 괄호 안에 매개변수가 들어간다.
+        SwingUtilities.invokeLater(() -> new LabelEx()); // Runnable의 run()을 람다식으로 표현함
     }
 }
