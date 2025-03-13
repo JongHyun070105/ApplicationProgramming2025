@@ -23,6 +23,9 @@ public class MoneyChange extends JFrame {
             JTextField source;
             JTextField[] tf = new JTextField[unit.length];
 
+            // 0313 추가 작업
+            JCheckBox[] cb = new JCheckBox[unit.length];
+
             setBackground(Color.YELLOW);
             setLayout(null);
 
@@ -58,20 +61,39 @@ public class MoneyChange extends JFrame {
                 add(tf[i]);
             }
 
+            // 체크 박스
+            for(int i=0;i<cb.length;i++){
+                cb[i] = new JCheckBox("", true);
+                cb[i].setOpaque(false);
+                cb[i].setHorizontalAlignment(JCheckBox.CENTER);
+                cb[i].setSize(30,20);
+                cb[i].setLocation(250,50+i*20);
+                add(cb[i]);
+            }
+
             calc.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed (ActionEvent e){
-                    String str = source.getText();
+                    String str = source.getText(); // 환전할 금액 문자열
                     if(str.length() == 0){
-                        return;
+                        return; // 환전할 금액이 없음
                     }else {
-                        int money = Integer.parseInt(str);
+                        int money = Integer.parseInt(str); // 문자인 금액을 정수로 변환
                         int res;
                         for(int i=0;i<unit.length;i++){
+                            if(i ==  unit.length-1){
+                                res = money/unit[i];
+                                tf[i].setText(Integer.toString(res));
+                                break;
+                               }
+                            if(!cb[i].isSelected()){
+                                tf[i].setText("0");
+                                continue;
+                            }
                             res = money/unit[i];
                             tf[i].setText(Integer.toString(res));
                             if(res>0){
-                                money = money % unit[i];
+                                money= money%unit[i];
                             }
                         }
                     }
