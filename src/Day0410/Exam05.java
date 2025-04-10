@@ -30,8 +30,10 @@ public class Exam05 {
 //            }
             Iterator<Integer> it = rain.iterator();
             while(it.hasNext()){
-                sum += it.next();
-            }
+                int a = it.next();
+                System.out.println(a + " ");
+                sum += a;
+             }
             System.out.println("\n 현재 평균 : " + (sum/rain.size()));
         }
     }
