@@ -17,7 +17,7 @@ public class TabMenuEx extends JFrame {
     }
 
     private JTabbedPane createTabbedPane() {
-        JTabbedPane tp = new JTabbedPane();
+        JTabbedPane tp = new JTabbedPane(JTabbedPane.LEFT);
         tp.addTab("tab1", new JLabel(new ImageIcon("img/image1.jpg")));
         tp.addTab("tab2", new JLabel(new ImageIcon("img/image2.jpg")));
         tp.addTab("tab3", new MyPanelTab());
