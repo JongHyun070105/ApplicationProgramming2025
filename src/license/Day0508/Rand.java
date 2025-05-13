@@ -1,7 +1,6 @@
-package Day0508.license;
+package license.Day0508;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Rand {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Day0514.license;
+package license.Day0515;
 
 public class Exam01 {
 }

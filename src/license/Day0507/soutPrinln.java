@@ -1,6 +1,5 @@
-package Day0507.license;
+package license.Day0507;
 
-import java.util.Map;
 import java.util.Scanner;
 
 public class soutPrinln {
