@@ -3,8 +3,8 @@ package Day0618;
 import javax.swing.*;
 import java.awt.*;
 
-public class Exam01 extends JFrame{
-    public Exam01() {
+public class SwingEx extends JFrame{
+    public SwingEx() {
         setTitle("스윙 컴포넌트 예제");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -19,6 +19,6 @@ public class Exam01 extends JFrame{
         setVisible(true);
     }
     public static void main(String[] args) {
-        new Exam01();
+        new SwingEx();
     }
 }
