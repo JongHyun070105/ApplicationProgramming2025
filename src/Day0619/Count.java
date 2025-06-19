@@ -36,6 +36,7 @@ public class Count extends JFrame{
         JLabel timerCountLabel = new JLabel("카운트 : 0");
 
         cp.add(timerCountLabel);
+        timerCountLabel.setFont(new Font("Gothic", Font.ITALIC, 50));
 
         TimerThread tt = new TimerThread(timerCountLabel);
         tt.start();
