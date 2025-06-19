@@ -3,40 +3,45 @@ package Day0619;
 import javax.swing.*;
 import java.awt.*;
 
-public class Count extends JFrame implements Runnable {
-    private JLabel label;
-    private int secondsCounter = 0;
-    public Count() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("카운터");
-        setLayout(new BorderLayout());
+class TimerThread extends Thread{
+    JLabel la;
+    int count = 0;
 
-        label = new JLabel("카운트 : " + secondsCounter);
-        add(label);
-
-        setSize(300, 200);
-
-        Thread counterThread = new Thread(this);
-        counterThread.start();
-
-        setVisible(true);
+    public TimerThread(JLabel la){
+        this.la = la;
     }
 
     @Override
-    public void run() {
-        while (true) {
-            try {
+    public void run(){
+        while(true){
+            try{
                 Thread.sleep(1000);
-                secondsCounter++;
-
-                SwingUtilities.invokeLater(() -> label.setText("카운트 : "+secondsCounter));
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                Thread.currentThread().interrupt();
-                break;
+                count++;
+                la.setText("카운트 : " + count);
+            } catch (Exception e){
+                return;
             }
         }
+    }
+}
+
+public class Count extends JFrame{
+    public Count(){
+        setTitle("카운트 예제");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Container cp = getContentPane();
+        cp.setLayout(new FlowLayout());
+
+        JLabel timerCountLabel = new JLabel("카운트 : 0");
+
+        cp.add(timerCountLabel);
+
+        TimerThread tt = new TimerThread(timerCountLabel);
+        tt.start();
+
+        setSize(300,300);
+        setVisible(true);
     }
 
     public static void main(String[] args) {
