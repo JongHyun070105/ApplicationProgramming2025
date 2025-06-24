@@ -38,7 +38,7 @@ class ThreadClass extends Thread{
             try {
                 la.setText("카운트 : " + count); // 라벨 업데이트하기
                 count++; // 카운트 증가
-                sleep(1000); // 1초 쉬기
+                Thread.sleep(1000); // 1초 쉬기
                 }catch (Exception e){ // 예외처리
                 e.printStackTrace();
             }
