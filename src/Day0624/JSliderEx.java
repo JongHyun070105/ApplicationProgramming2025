@@ -11,7 +11,7 @@ public class JSliderEx extends JFrame {
 
     public JSliderEx() {
         la.setFont(new Font("Gothic", Font.BOLD, 60));
-        setTitle("");
+        setTitle("슬라이더로 글자 크기 조정");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container cp = getContentPane();
