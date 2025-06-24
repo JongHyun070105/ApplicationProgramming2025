@@ -8,7 +8,7 @@ public class ClientTest {
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket("localhost", 8888);
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-        out.println("Hello Sever?");
+        out.println("Hello Day0624.Sever?");
         socket.close();
     }
 }
