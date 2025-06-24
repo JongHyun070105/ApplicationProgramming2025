@@ -11,6 +11,7 @@ public class CountEx extends JFrame {
         Container cp = getContentPane();
 
         JLabel la = new JLabel("카운트 : 0"); // label 추가
+        la.setFont(new Font("Gothic", Font.BOLD, 30));
         cp.add(la);
 
         ThreadClass tc = new ThreadClass(la); // 스레드 클래스 선언
